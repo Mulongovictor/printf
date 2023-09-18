@@ -1,1 +1,1 @@
-readme file for printf_func
+readme file for printf
