@@ -24,11 +24,3 @@ int main(void)
    printf("%d = %d\n", len, len2);
     return (0);
 }
-
-
-
-
-
-
-
-
