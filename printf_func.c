@@ -4,8 +4,9 @@
  * _printf - is function that outputs on the std output
  * @format: is the string that is parsed to the function
  *
- * Returns: 0 Always (SUCCESS)
+ * Return: 0 Always (SUCCESS)
  */
+int _printf(const char *format, ...);
 
 int _printf(const char *format, ...)
 {
@@ -17,7 +18,7 @@ int _printf(const char *format, ...)
 
 	va_start(formatchar, format);
 
-	while(*format)
+	while (*format)
 	{
 		if (*format != '%')
 		{
@@ -37,14 +38,17 @@ int _printf(const char *format, ...)
 			else if (*format == 'c')
 			{
 				char c = va_arg(formatchar, int);
+
+
 				write(1, &c, 1);
 				countchar++;
 			}
 			else if (*format == 's')
 			{
-				char * strng = va_arg(formatchar, char*);
-				strglen = 0;
+				char  *strng = va_arg(formatchar, char*);
+				int strglen = 0;
 				int i;
+
 				for (i = 0; strng[i] != '\0'; i++)
 				{
 					strglen++;
