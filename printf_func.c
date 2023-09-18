@@ -49,6 +49,11 @@ int _printf(const char *format, ...)
 				int strglen = 0;
 				int i;
 
+			if (strng == NULL)
+			{
+				strng = "(null)";
+			}
+
 				for (i = 0; strng[i] != '\0'; i++)
 				{
 					strglen++;
