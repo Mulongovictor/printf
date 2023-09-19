@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 
 	va_start(formatchar, format);
 
-	if (!format ||(format[0] == '%' && !format[1]))
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
@@ -54,10 +54,10 @@ int _printf(const char *format, ...)
 				int strglen = 0;
 				int i;
 
-			if (strng == NULL)
-			{
-				strng = "(null)";
-			}
+				if (strng == NULL)
+				{
+					return ("(null)");
+				}
 
 				for (i = 0; strng[i] != '\0'; i++)
 				{
