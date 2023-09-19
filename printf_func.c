@@ -66,12 +66,6 @@ int _printf(const char *format, ...)
 				write(1, strng, strglen);
 				countchar += strglen;
 			}
-			else
-				(*format != 'c' || *format != 's')
-			{
-				write(1, format, 2);
-				countchar++;
-			}
 		}
 		format++;
 	}
