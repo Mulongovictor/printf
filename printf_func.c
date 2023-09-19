@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
 
 				if (strng == NULL)
 				{
-					return ("(null)");
+					strng = "(null)";
 				}
 
 				for (i = 0; strng[i] != '\0'; i++)
