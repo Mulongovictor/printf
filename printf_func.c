@@ -12,11 +12,10 @@ int _printf(const char *format, ...)
 {
 	int countchar = 0;
 	va_list formatchar;
+	va_start(formatchar, format);
 
 	if (format == NULL)
 		return (-1);
-
-	va_start(formatchar, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -29,6 +28,10 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			countchar++;
+		}
+		else if (*format == '%' && (*format != 'c' || *format != 's'))
+		{
+			write(1, format)
 		}
 		else
 		{
@@ -67,6 +70,11 @@ int _printf(const char *format, ...)
 				countchar += strglen;
 			}
 
+		}
+		if (*format == '%' && (*format != 'c' || *format != 's'))
+		{
+			write(1, format, 1);
+			countchar++;
 		}
 		format++;
 	}
