@@ -5,7 +5,7 @@
  * Return: return when it is success 1
  */
 
-_putchar(char c)
+int _putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);

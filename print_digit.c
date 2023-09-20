@@ -11,7 +11,7 @@ int print_digit(long num, int count)
 
 	if (num < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		count++;
 		num = num * -1;
 	}
@@ -19,6 +19,6 @@ int print_digit(long num, int count)
 	{
 		count = print_digit(num / 10, count);
 	}
-	putchar(num % 10 + '0');
+	_putchar(num % 10 + '0');
 	return (count + 1);
 }
