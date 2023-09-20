@@ -1,40 +1,63 @@
 #include "main.h"
 
 /**
- * printf_replica - is a function that behaves like a printf.
+ * _printf - is a function that behaves like a printf.
  * @format: argument of the function
  * Return: count
  */
+int _printf(const char *format, ...);
 
-int printf_replica(const char *format, ...)
+int _printf(const char *format, ...)
 {
+	int i;
+	int charcount = 0;
 	va_list sentence;
 
 	va_start(sentence, format);
 
-	int i;
-	int ncount = 0;
-
 	if (format == NULL)
-	{
 		return (-1);
-	}
-
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
 		{
-			i++;
-			if (format[i] == 'd' || format[i] == 'i')
+			_putchar(format[i]);
+			charcount++;
+		}
+		else if (format[i] == '%')
+		{
+			format++;
+			if (format[i] == '\0')
 			{
-				ncount += select_input(format[i])(sentence);
+				break;
 			}
-			else
+			else if (format[i] == '%')
 			{
-				ncount += putchar(format[i]);
+				_putchar(format[i]);
+				charcount++;
+			}
+			else if (format[i] == 'c')
+			{
+				charcount += select_input(format[i])(sentence);
+			}
+			else if (format[i] == 's')
+			{
+				charcount += select_input(format[i])(sentence);
+			}
+			else if (format[i] == 'd')
+			{
+				charcount += select_input(format[i])(sentence);
+			}
+			else if (format[i] == 'i')
+			{
+				charcount += select_input(format[i])(sentence);
 			}
 		}
 	}
 	va_end(sentence);
-	return (ncount);
+	return (charcount);
 }

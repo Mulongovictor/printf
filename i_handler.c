@@ -6,7 +6,6 @@
  * Return: count
  */
 
-int print_digit(long num, int count);
 int i_handler(va_list sentence)
 {
 	int count;

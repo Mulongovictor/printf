@@ -6,21 +6,18 @@
  * Return: it returns number of the digits
  */
 
-int print_digit(long int num, int count)
+int print_digit(long num, int count)
 {
-	long int num;
-	int count = 0;
 
 	if (num < 0)
-
 	{
-	putchar('-');
-	count++;
-	num = num * -1;
+		putchar('-');
+		count++;
+		num = num * -1;
 	}
 	if (num / 10)
 	{
-	count = print_digit(num / 10, count);
+		count = print_digit(num / 10, count);
 	}
 	putchar(num % 10 + '0');
 	return (count + 1);
