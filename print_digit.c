@@ -6,9 +6,9 @@
  * Return: it returns number of the digits
  */
 
-int print_digit(long  num, int count)
+int print_digit(long int num, int count)
 {
-	long num;
+	long int num;
 	int count = 0;
 
 	if (num < 0)
