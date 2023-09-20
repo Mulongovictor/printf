@@ -31,7 +31,7 @@ int printf_replica(const char *format, ...)
 			}
 			else
 			{
-				ncount += _putchar(format[i]);
+				ncount += putchar(format[i]);
 			}
 		}
 	}
