@@ -56,6 +56,12 @@ int _printf(const char *format, ...)
 			{
 				charcount += select_input(format[i])(sentence);
 			}
+			else
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				charcount += 2;
+			}
 		}
 	}
 	va_end(sentence);
