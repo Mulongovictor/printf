@@ -9,19 +9,19 @@
 
 int (*select_input(char a))(va_list sentence)
 {
-	if (a == 's')
+	if (a ==  's')
 	{
 		return (&s_handler);
 	}
-	else if (a == 'c')
+	else if (a ==  'c')
 	{
 		return (&c_handler);
 	}
-	if (a == 'd')
+	if (a ==  'd')
 	{
 		return (&d_handler);
 	}
-	else if (a == 'i')
+	else if (a ==  'i')
 	{
 		return (&i_handler);
 	}
